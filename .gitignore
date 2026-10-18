@@ -1,0 +1,23 @@
+# Sensitive files — NEVER commit these
+router_monitor_config.json
+router_monitor_state.json
+oui_cache.json
+*.log
+router_monitor_stdout.log
+router_monitor_stderr.log
+run_silent.vbs
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.DS_Store
+
+# Docker
+docker-data/
+
+# Deployment artifacts
+deploy_phone/
+deploy_phone.zip

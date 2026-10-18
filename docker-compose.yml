@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  router-monitor:
+    build: .
+    container_name: airtel-router-monitor
+    restart: unless-stopped
+    volumes:
+      # Mount your config file (required)
+      - ./router_monitor_config.json:/app/router_monitor_config.json:ro
+      # Persist state and logs
+      - monitor-data:/app/data
+    # If config file uses env vars instead, uncomment:
+    # environment:
+    #   - ROUTER_IP=192.168.1.1
+    #   - ROUTER_USERNAME=admin
+    #   - ROUTER_PASSWORD=your_password
+    #   - TELEGRAM_BOT_TOKEN=your_token
+    #   - TELEGRAM_CHAT_ID=your_chat_id
+
+volumes:
+  monitor-data:
